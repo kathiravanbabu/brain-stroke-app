@@ -1,41 +1,47 @@
 ==============================================
   BRAIN STROKE PREDICTION PROJECT
+  (FIXED - No brain_model.h5 needed!)
 ==============================================
 
-FOLDER CONTENTS:
-----------------
-  app.py                               ← Main Streamlit app
-  stroke_cardiovascular_synthetic.csv  ← CSV data (already inside)
-  brain_model.h5                       ← ⚠️ YOU MUST ADD THIS (see below)
-  RUN_APP.bat                          ← Double-click this to launch!
+YOUR PROJECT FOLDER SHOULD HAVE THESE FILES:
+---------------------------------------------
+  app.py                                  <- Main Streamlit app
+  stroke_cardiovascular_synthetic_csv.csv <- Data file
+  requirements.txt                        <- Package list
+  RUN_APP.bat                             <- Double-click to start
+
+  ✅ NO brain_model.h5 REQUIRED ANYMORE!
+  The Brain Image page now works with built-in
+  image feature analysis — no TensorFlow needed.
 
 ----------------------------------------------
-STEP 1 — Install requirements (only once)
+HOW TO RUN THE APP
 ----------------------------------------------
-Open CMD and run:
+  Just DOUBLE-CLICK --> RUN_APP.bat
+  Browser opens at: http://localhost:8501
 
-  pip install streamlit pandas numpy scikit-learn pillow tensorflow
-
-----------------------------------------------
-STEP 2 — Save your brain model
-----------------------------------------------
-In your Jupyter notebook, after training, run:
-
-  model.save("brain_model.h5")
-
-Then COPY that brain_model.h5 file INTO this folder.
+  First time: packages auto-install (takes ~1 min)
 
 ----------------------------------------------
-STEP 3 — Run the app
+APP PAGES:
 ----------------------------------------------
-Just DOUBLE-CLICK  →  RUN_APP.bat
+  Page 1 - ML Prediction
+    Fill patient details -> Predicts stroke/heart risk
+    Shows risk bar + top feature importance chart
 
-Your browser will open automatically at:
-  http://localhost:8501
+  Page 2 - Brain Image Prediction
+    Upload any brain scan (MRI/CT) image
+    Analyses brightness, asymmetry, dark/bright regions
+    Shows risk gauge + attention heatmap
+    NO .h5 file needed!
 
 ----------------------------------------------
-PAGES:
+WHAT CHANGED (vs old version):
 ----------------------------------------------
-🩺 ML Prediction      → Fill patient details → Predict stroke risk
-🧠 Brain Image        → Upload brain scan   → Normal or Stroke
+  - Removed TensorFlow dependency (was causing errors)
+  - Brain Image page now uses image feature extraction
+  - Added matplotlib charts to both pages
+  - Added accuracy display on ML page
+  - Works immediately, no setup needed
 ==============================================
+
