@@ -110,4 +110,3 @@ if st.button("🔍 Predict"):
         st.error(f"⚠️ HIGH RISK — {prob:.2f}%")
     else:
         st.success(f"✅ LOW RISK — {prob:.2f}%")
-brain_model.h5
